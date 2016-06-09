@@ -50,3 +50,10 @@ class Day(models.Model):
         max_length=3,
         choices=DAYS,
     )
+
+class ShiftRequirement(models.Model):
+    """Represent the requirements for a specific shift to be filled"""
+    shift_id = models.IntegerField()
+    day = models.ForeignKey(Day)
+    required_role = models.ForeignKey(WorkRole)
+    hours = models.IntegerField()
