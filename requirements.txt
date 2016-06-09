@@ -1,1 +1,4 @@
 Django==1.9.7
+invoke==0.12.2
+pyScss==1.3.5
+six==1.10.0
