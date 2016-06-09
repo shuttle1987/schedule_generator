@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+
+    <title>{% block title %} default title {% endblock %} - Timetable scheduler</title>
+
+    <link rel="stylesheet" href="{% static 'basic_theme/css/style.css' %}" />
+</head>
+
+
+<body>
+    <div id="page-wrap">
+        <div id="header">
+            {% block header %}{% endblock %}
+        </div>
+        <div id="middle">
+            <div id="sidebar-left">
+                {% block sidebar %}
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                </ul>
+                {% endblock %}
+            </div>
+
+            <div id="main-content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <div id="footer">
+            Source code can be found on <a href="https://github.com/shuttle1987/schedule_generator">GitHub</a>
+        </div>
+    </div>
+</body>
+</html>
