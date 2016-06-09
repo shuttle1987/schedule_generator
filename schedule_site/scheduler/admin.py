@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import (
+    WorkRole,
+    Employee,
+    Day,
+)
+
+admin.site.register(WorkRole)
+admin.site.register(Employee)
+admin.site.register(Day)
