@@ -16,17 +16,18 @@ def import_staff_from_csv(csv_path):
             
             print("employee_id. valid_roles, max_hours, days_unavailable: ", employee_id, valid_roles, max_hours, days_unavailable)
             
-            if created:
-                imported_staff.append({
-                    "Employee ID": employee_id,
-                    "valid_roles": valid_roles,
-                    "max_hours": max_hours,
-                    "days_unavailable": days_unavailable,
-                })
-
             #employee, created = Employee.objects.get_or_create(
             #    max_hours=max_hours,
             #    employee_id=employee_id,
             #    capable_roles=
             #)
+
+            #if created:
+            #    imported_staff.append({
+            #        "Employee ID": employee_id,
+            #        "valid_roles": valid_roles,
+            #        "max_hours": max_hours,
+            #        "days_unavailable": days_unavailable,
+            #    })
+
     return imported_staff
