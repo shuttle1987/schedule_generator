@@ -18,7 +18,10 @@ from django.contrib import admin
 
 from django.views.generic import TemplateView
 
+from scheduler.views import import_staff_info
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^import$', import_staff_info, name="import-data"),
     url(r'^$', TemplateView.as_view(template_name="scheduler/home.html"), name="home"),
 ]
