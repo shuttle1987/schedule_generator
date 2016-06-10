@@ -3,6 +3,8 @@ import csv
 
 from .models import Employee, WorkRole
 
+__all__ = ['import_staff_from_csv']
+
 def import_staff_from_csv(csv_path):
     """Import the CSV staff information"""
     imported_staff = [] #staff imported this run
@@ -13,20 +15,21 @@ def import_staff_from_csv(csv_path):
             valid_roles = row["Valid Roles"]
             max_hours = row["Max Hours"]
             days_unavailable = row["Days Unavailable"]
-            
+
             print("employee_id. valid_roles, max_hours, days_unavailable: ", employee_id, valid_roles, max_hours, days_unavailable)
-            
-            if created:
-                imported_staff.append({
-                    "Employee ID": employee_id,
-                    "valid_roles": valid_roles,
-                    "max_hours": max_hours,
-                    "days_unavailable": days_unavailable,
-                })
 
             #employee, created = Employee.objects.get_or_create(
             #    max_hours=max_hours,
             #    employee_id=employee_id,
             #    capable_roles=
             #)
+
+            #if created:
+            #    imported_staff.append({
+            #        "Employee ID": employee_id,
+            #        "valid_roles": valid_roles,
+            #        "max_hours": max_hours,
+            #        "days_unavailable": days_unavailable,
+            #    })
+
     return imported_staff

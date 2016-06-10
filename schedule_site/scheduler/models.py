@@ -53,7 +53,13 @@ class Day(models.Model):
 
 class ShiftRequirement(models.Model):
     """Represent the requirements for a specific shift to be filled"""
-    shift_id = models.IntegerField()
+    shift_id = models.IntegerField()#possibly make a model for the shift, however this might create more DB joins than wanted, TODO: profile this
     day = models.ForeignKey(Day)
     required_role = models.ForeignKey(WorkRole)
     hours = models.IntegerField()
+
+class SchedulerResults(models.Model):
+    """Model to store the results of a solver run"""
+    employee = models.ForeignKey(Employee)
+    shift_id = models.IntegerField()#possibly make a model for the shift, however this might create more DB joins than wanted, TODO: profile this
+

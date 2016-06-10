@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Employees
+{% endblock %}
+
+{% block header %}
+Employee list
+{% endblock %}
+
+{% block content %}
+Currently the following employee data is in the database:
+<ul>
+{% for person in employees %}
+    <li>ID {{person.employee_id}} can work at most {{person.max_hours}} hours in {{ person.capable_roles}} roles. </li>
+{% empty %}
+    <li>No employees found in database, try importing data first</li>
+{% endfor %}
+
+</ul>
+{% endblock %}
