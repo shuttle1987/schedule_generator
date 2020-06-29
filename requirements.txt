@@ -1,6 +1,6 @@
 astroid==1.4.6
 colorama==0.3.7
-Django==1.9.7
+Django==1.11.29
 invoke==0.12.2
 lazy-object-proxy==1.2.2
 pylint==1.5.6
